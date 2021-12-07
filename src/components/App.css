@@ -1,3 +1,7 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -21,4 +25,40 @@ input {
 input:focus {
   outline: none;
   border-bottom: 2px solid var(--green);
+}
+
+.item-cards-list {
+  padding: 3rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+
+.item-cards {
+  padding: 3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+/* 
+.ui.card#cardthing {
+  width: "250px" !important;
+  height: "250px" !important;
+} */
+
+.items-layout {
+  padding: 2rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.testDiv {
+  margin: 5rem;
 }

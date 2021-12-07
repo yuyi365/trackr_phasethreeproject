@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import { Card, Image, Button, Form, Grid, CardGroup } from 'semantic-ui-react';
 
 const Item = ({name, quantity, minQuantity, notes, image, id, items, setItems}) => {
     const [editing, setEditing] = useState(false)
     const [updatedQuantity, setUpdatedQuantity] = useState(quantity)
+    const [updatedMinQuantity, setUpdatedMinQuantity] = useState(minQuantity)
+    const [updatedNotes, setUpdatedNotes] = useState(notes)
+    const [updatedName, setUpdatedName] = useState(name)
+
+
     const handleEditClick = () => {
         setEditing(editing => !editing)
         if (editing){
@@ -13,7 +18,10 @@ const Item = ({name, quantity, minQuantity, notes, image, id, items, setItems}) 
                     "Content-Type" : "application/json"
                 },
                 body: JSON.stringify({
-                    quantity: updatedQuantity
+                    quantity: updatedQuantity,
+                    min_quantity: updatedMinQuantity,
+                    name: updatedName,
+                    notes: updatedNotes
                 })
             })
         }
@@ -25,23 +33,25 @@ const handleDelete = () => {
     
 }
 return (
-    <Card>
+    <div className="items-layout">
+    <Card style={{height: "100%", maxWidth: "100%"}}>
         <Image src={image} wrapped ui={false} />
     <Card.Content>
-        <Card.Header>{name}</Card.Header>
+        <Card.Header>{editing ? <input value ={updatedName} onChange={(e)=> {setUpdatedName(e.target.value)}}/> : updatedName}</Card.Header>
         <Card.Meta>
-            <span className='date'>Quantity: {editing ?<input value ={updatedQuantity} onChange={(e)=> {setUpdatedQuantity(e.target.value)}}/> : updatedQuantity}</span>
+            <span className='date'>Quantity: {editing ?<input type="number" min="0" value ={updatedQuantity} onChange={(e)=> {setUpdatedQuantity(e.target.value)}}/> : updatedQuantity}</span>
         </Card.Meta>
         <Card.Meta>
-            <span className='date'>Minimum Quantity: {minQuantity}</span>
+            <span className='date'>Minimum Quantity: {editing ?<input type="number" min="0" value ={updatedMinQuantity} onChange={(e)=> {setUpdatedMinQuantity(e.target.value)}}/> : updatedMinQuantity}</span>
         </Card.Meta>
-        <Card.Description>
-            {notes}
+        <Card.Description style={{overflow: "auto"}}>
+            {editing ? <Form style={{overflow: "auto"}}> <Form.Field label='Notes' control='textarea' rows='3' value={updatedNotes} onChange={(e) => setUpdatedNotes(e.target.value)}/></Form>: updatedNotes}
         </Card.Description>
-        </Card.Content>
+    </Card.Content>
       { editing && <Button onClick={handleDelete}>Delete Item</Button>}
         <Button onClick={handleEditClick}>{editing ? 'Save' : 'Edit Item'}</Button>
   </Card>
+  </div>
     )
 }
 

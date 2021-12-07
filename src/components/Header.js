@@ -1,9 +1,13 @@
-import React from 'react'
+import { Icon } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <div>
-            Hello
+            <Link to="/">
+                <Icon name="home" size="huge"/>
+            </Link>
+            
         </div>
     )
 }

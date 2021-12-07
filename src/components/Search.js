@@ -1,5 +1,3 @@
-import React from "react";
-
 const Search = ({handleSearch, search}) => {
 
   const handleSearchType = (e) => {
@@ -8,12 +6,12 @@ const Search = ({handleSearch, search}) => {
  
   return (
     <div className="searchbar">
-      <label htmlFor="search">Search Plants:</label>
+      <label htmlFor="search">Search Items</label>
       <input
         type="text"
         id="search"
         value={search}
-        placeholder="Type a name to search..."
+        placeholder="Type a item to search..."
         onChange={handleSearchType}
       />
     </div>

@@ -6,6 +6,7 @@ import { CardGroup, Grid } from 'semantic-ui-react';
 
 const Home = ({setListId, userId}) => {
     const [lists, setLists] = useState([]);
+    const [open, setOpen] = useState(false)
 
     useEffect(() => {
         fetch(`http://localhost:9292/lists/user_id/${userId}`)
@@ -24,13 +25,11 @@ const Home = ({setListId, userId}) => {
        
         <CardGroup>
         <Grid container columns={3} stackable className="item-cards">
-        
-            <ListContainer setListId={setListId} userId={userId} lists={lists}/>
-                
+            <ListContainer setListId={setListId} userId={userId} lists={lists} setOpen={setOpen}/>
         </Grid>
 
         <Grid container columns={1} stackable className="item-cards">
-        <NewList userId={userId} lists={lists} setLists={setLists}/>
+            <NewList userId={userId} lists={lists} setLists={setLists} open={open} setOpen={setOpen}/>
         </Grid>
         </CardGroup>
         

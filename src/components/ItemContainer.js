@@ -22,6 +22,7 @@ const ItemContainer = ({items, search, selectedCategory, categories, setItems}) 
         id={item.id}
         items={items}
         setItems={setItems}
+        key={item.id}
     />)
     return (
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Button, Dropdown } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
 const CreateItem = ({setAddItem, categories, items, setItems, listId, onList, setItemCreated}) => {
 
@@ -18,7 +18,7 @@ const CreateItem = ({setAddItem, categories, items, setItems, listId, onList, se
         
         let body = {
             name: name,
-            category: category === 'Add new category' ? newCategory : category,
+            category: category ? (category === 'Add new category' ? newCategory : category ): 'Other',
             list_id: listId,
             quantity: quantity,
             min_quantity: minQuantity,
@@ -76,7 +76,8 @@ const CreateItem = ({setAddItem, categories, items, setItems, listId, onList, se
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
             />
-            <Dropdown
+            <Form.Dropdown
+                label="Category"
                 placeholder='Select Category'
                 fluid
                 selection
@@ -111,8 +112,11 @@ const CreateItem = ({setAddItem, categories, items, setItems, listId, onList, se
         <Form.Group widths='equal'>
             <Form.Field label='Notes' control='textarea' rows='3' value={notes} onChange={(e) => setNotes(e.target.value)}/>
         </Form.Group>
-        <Button type='submit'>Add</Button>
-         {onList && <Button onClick={()=> setAddItem(false)}>Cancel</Button>}
+            <Button floated="right" style={{backgroundColor: "#efbd6c", color: "#0A2342"}} type='submit'>
+                Add
+            </Button>
+        {onList && <Button onClick={()=> setAddItem(false)}>Cancel</Button>}
+         
   </Form>
     )
 }

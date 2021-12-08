@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom'
 
 const ListItem = ({name, id, setListId}) => {
 
+    const style = {
+        color:"#0A2342",
+    }
+
     return (
-    <Card raised stackable className="list-card-item">
-    <Card.Content style={{marginTop: "25%"}}>
-        <Card.Header centered as={Link} to={`/lists/${id}`} onClick={()=> setListId(id)} style={{color:"thistle"}}>{name}</Card.Header>
+    <Card raised stackable className="list-card-item" as={Link} to={`/lists/${id}`} onClick={()=> setListId(id)}>
+    <Card.Content style={{marginTop: "20%", color:"#0A2342"}}>
+        <Card.Header 
+        style={style}>{name}</Card.Header>
     </Card.Content>
     </Card>
     )

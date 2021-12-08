@@ -1,7 +1,7 @@
 import { Card } from 'semantic-ui-react'
 import ListItem from './ListItem'
 
-const ListContainer = ({setListId, lists}) => {
+const ListContainer = ({setListId, lists, setOpen}) => {
 
     return (
   
@@ -11,9 +11,9 @@ const ListContainer = ({setListId, lists}) => {
                 return <ListItem name={list.name} id ={list.id} setListId={setListId} key={list.id}/>
             })}
 
-        <Card raised stackable className="list-card-item">
-            <Card.Content style={{marginTop: "25%"}}>
-                <Card.Header>+ Add New List</Card.Header>
+        <Card raised stackable className="list-card-item" onClick={()=> setOpen(true)}>
+            <Card.Content style={{marginTop: "20%", color:"#0A2342"}}>
+                <Card.Header style={{color:"#0A2342"}}>+ Add New List</Card.Header>
             </Card.Content>
         </Card>
     </Card.Group>

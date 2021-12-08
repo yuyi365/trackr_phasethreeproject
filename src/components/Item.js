@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Card, Image, Button, Form, Grid, CardGroup } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 
 const Item = ({name, quantity, minQuantity, notes, image, id, items, setItems}) => {
     const [editing, setEditing] = useState(false)
@@ -34,7 +34,7 @@ const handleDelete = () => {
 }
 return (
     <div className="items-layout">
-    <Card style={{height: "100%", maxWidth: "100%"}}>
+    <Card style={{height: "100%", maxWidth: "100%", color:"#0A2342"}}>
         <Image src={image} wrapped ui={false} />
     <Card.Content>
         <Card.Header>{editing ? <input className="edit-input" value ={updatedName} onChange={(e)=> {setUpdatedName(e.target.value)}}/> : updatedName}</Card.Header>
@@ -51,8 +51,8 @@ return (
         </Card.Description>
     
     </Card.Content>
-      {editing && <Button onClick={handleDelete}>Delete Item</Button>}
-        <Button onClick={handleEditClick}>{editing ? 'Save' : 'Edit Item'}</Button>
+      {editing && <Button style={{backgroundColor: "#F48367", color: "#0A2342"}} onClick={handleDelete}>Delete Item</Button>}
+        <Button style={{backgroundColor: "#efbd6c", color: "#0A2342"}} onClick={handleEditClick}>{editing ? 'Save' : 'Edit Item'}</Button>
   </Card>
   </div>
     )

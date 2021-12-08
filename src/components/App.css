@@ -1,15 +1,12 @@
-* {
-  font-family: "Helvetica Neue", sans-serif !important;
-}
-
 .app,
 body {
   text-align: center;
-  background-color: #1da1f2 !important;
+  background-color: #3aaed8 !important;
 }
 
 .item-cards-list {
-  padding-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 7%;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -33,6 +30,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  color: "#0A2342";
 }
 .items-container {
   margin: 5%;
@@ -45,25 +43,34 @@ body {
   margin: 5rem;
 }
 
-.list-page {
+.ui.grid.list-page {
   justify-content: center;
   text-align: center;
+  align-items: center;
+  margin-left: 50%;
+}
+
+.list-page-add {
+  margin-left: 10%;
+}
+
+.ui.grid.list-page-search {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: 35%;
 }
 
 .search-box {
-  border-radius: 20px;
-  background-color: var(--search-area-bg);
-  padding-right: 12px;
-  height: 40px;
-  display: flex;
+  border-radius: 3px;
+  height: 3rem;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 35%;
-  color: var(--light-font);
-  box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2),
-    0 24px 20px -24px rgba(71, 82, 107, 0.1);
+  width: 80%;
   overflow: hidden;
+  outline: 2px solid #efbd6c;
+  background-color: white;
+  margin-left: 15%;
 }
 
 .search-input {
@@ -73,8 +80,12 @@ body {
   height: 100%;
   padding: 0 20px;
   font-size: 16px;
-  background-color: var(--search-area-bg);
-  color: var(--main-color);
+  color: #0a2342;
+}
+
+.search-input::placeholder {
+  color: "grey";
+  opacity: 0.5;
 }
 
 .edit-input {
@@ -87,11 +98,12 @@ body {
 }
 
 .ui.card.list-card-item {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   justify-content: center;
   align-items: center;
   text-align: center;
+  outline: 2px solid #efbd6c;
 }
 
 .header {
@@ -103,14 +115,21 @@ body {
 }
 
 #logo {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-family: "Fredoka One", cursive !important;
   color: white;
   letter-spacing: 0.1em;
 }
 
 h2 {
-  color: #fade81;
-  text-decoration: white wavy underline;
-  text-underline-position: under;
+  color: #0a2342;
+  font-size: 2rem !important;
+  /* text-decoration: #efbd6c underline; */
+  border-bottom-style: solid;
+  border-bottom-width: 3.5px;
+  border-color: #efbd6c;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

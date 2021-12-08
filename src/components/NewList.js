@@ -1,16 +1,25 @@
 import { useState } from 'react';
-import { Button, Form, Modal, Icon } from 'semantic-ui-react';
+import { Button, Form, Modal, Message } from 'semantic-ui-react';
 import CreateItem from './CreateItem';
 
-const NewList = ({userId, lists, setLists}) => {
-    const [open, setOpen] = useState(false)
+const NewList = ({userId, lists, setLists, open, setOpen}) => {
+    
     const [creating, setCreating] = useState('list')
     const [name, setName] = useState("");
     const [list, setList] = useState('')
     const [itemCreated, setItemCreated] = useState(false)
+    const [noNameSubmit, setNoNameSubmit] = useState(false)
+
+    const handleCancel = () => {
+      setOpen(false)
+      setCreating('list')
+      setName('')
+      setList('')
+      setNoNameSubmit(false)
+    }
 
     const handleNext = () => {
-        setCreating('item')
+        if (name){setCreating('item')
         fetch('http://localhost:9292/lists', {
             method: "POST",
             headers: {
@@ -26,7 +35,9 @@ const NewList = ({userId, lists, setLists}) => {
             console.log(data)
             console.log(lists)
             setLists([...lists, data])
-        })
+        })} else {
+           setNoNameSubmit(true)
+        }
     }
 
     return (
@@ -34,11 +45,9 @@ const NewList = ({userId, lists, setLists}) => {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button icon labelPosition='left'> 
-        <Icon name="add" className='icon'/>Add New List</Button>}
     >
       <Modal.Header>{creating === 'list' ? 'Create A New List' : itemCreated ? 'Add Another Item' : 'Add Item'}</Modal.Header>
-      <Modal.Content>
+      <Modal.Content scrolling="true">
         {creating === 'item' && <CreateItem listId={list.id} setItemCreated={setItemCreated}/>}
         {creating === 'list' && <Form.Input
                 fluid
@@ -49,24 +58,25 @@ const NewList = ({userId, lists, setLists}) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />}
+            {(creating === 'list' && noNameSubmit && !name) && <Message negative>
+            <Message.Header>Please name your list</Message.Header>
+          </Message>}
       </Modal.Content>
       <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
+        <Button onClick={handleCancel}>
           Cancel
         </Button>
-        {creating === 'list' && <Button
+        {creating === 'list' && 
+        <Button
+          style={{ backgroundColor:'#3aaed8' }}
           content="Create List"
-          labelPosition='right'
-          icon='arrow right'
           onClick={handleNext}
-          positive
         />}
-        {creating === 'item' && <Button
+        {creating === 'item' && 
+        <Button
+          style={{ backgroundColor:'#3aaed8' }}
           content="Done"
-          labelPosition='right'
-          icon='checkmark'
           onClick={() => setOpen(false)}
-          positive
         />}
       </Modal.Actions>
     </Modal>

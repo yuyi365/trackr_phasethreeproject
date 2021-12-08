@@ -9,7 +9,7 @@ const App = () => {
   const userId = 1
 
   return (
-    <div>
+    <div className="app">
       <Switch>
         <Route exact path="/lists/:listId">
           <List listId ={listId} setListId={setListId}/>

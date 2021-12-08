@@ -25,7 +25,7 @@ const ItemContainer = ({items, search, selectedCategory, categories, setItems}) 
     />)
     return (
 
-        <CardGroup>
+        <CardGroup className="items-container">
             {itemsMap}
         </CardGroup>
 

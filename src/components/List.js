@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 const List = ({listId, setListId}) => {
 
-    const params = useParams()
+    const params = useParams();
     const [search, setSearch] = useState("");
     const [addItem, setAddItem] = useState(false);
     const [items, setItems]= useState([]);
@@ -40,19 +40,26 @@ const List = ({listId, setListId}) => {
       categoryOptions.unshift(<option value={'All'}>All</option>)
       
     return (
-        <div>
-            <Header />
+    <div>
+        <div className="header">
+        <Header/>
+        </div>
+        <div className="list-page">
             <h2>
                 {listName}
             </h2>
+            
             <Search handleSearch={handleSearch} search={search} />
             {!addItem && <Button onClick={() => setAddItem(addItem => !addItem)}>Add Item</Button>}
             {addItem && <CreateItem setAddItem={setAddItem} categories={categories} items={items} setItems={setItems} listId={listId} onList={true}/>}
             <label> Filter By Category
-            <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>{categoryOptions}</select>
-      </label>
-            <ItemContainer items={items} search={search} selectedCategory={selectedCategory} categories={categories} setItems={setItems}/>
+                <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>{categoryOptions}</select>
+            </label>
+        
         </div>
+
+            <ItemContainer items={items} search={search} selectedCategory={selectedCategory} categories={categories} setItems={setItems}/>
+    </div>
     )
 }
 

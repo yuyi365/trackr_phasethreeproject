@@ -37,18 +37,21 @@ return (
     <Card style={{height: "100%", maxWidth: "100%"}}>
         <Image src={image} wrapped ui={false} />
     <Card.Content>
-        <Card.Header>{editing ? <input value ={updatedName} onChange={(e)=> {setUpdatedName(e.target.value)}}/> : updatedName}</Card.Header>
+        <Card.Header>{editing ? <input className="edit-input" value ={updatedName} onChange={(e)=> {setUpdatedName(e.target.value)}}/> : updatedName}</Card.Header>
+        
         <Card.Meta>
-            <span className='date'>Quantity: {editing ?<input type="number" min="0" value ={updatedQuantity} onChange={(e)=> {setUpdatedQuantity(e.target.value)}}/> : updatedQuantity}</span>
+            <span className='date'>Quantity: {editing ?<input className="edit-input" type="number" min="0" value ={updatedQuantity} onChange={(e)=> {setUpdatedQuantity(e.target.value)}}/> : updatedQuantity}</span>
         </Card.Meta>
         <Card.Meta>
-            <span className='date'>Minimum Quantity: {editing ?<input type="number" min="0" value ={updatedMinQuantity} onChange={(e)=> {setUpdatedMinQuantity(e.target.value)}}/> : updatedMinQuantity}</span>
+            <span className='date'>Minimum Quantity: {editing ?<input className="edit-input" type="number" min="0" value ={updatedMinQuantity} onChange={(e)=> {setUpdatedMinQuantity(e.target.value)}}/> : updatedMinQuantity}</span>
         </Card.Meta>
         <Card.Description style={{overflow: "auto"}}>
-            {editing ? <Form style={{overflow: "auto"}}> <Form.Field label='Notes' control='textarea' rows='3' value={updatedNotes} onChange={(e) => setUpdatedNotes(e.target.value)}/></Form>: updatedNotes}
+        <span className='date'> Notes: {editing ?
+            <textarea className="edit-input" type='textarea' rows="4" cols="30" value={updatedNotes} onChange={(e) => setUpdatedNotes(e.target.value)}/> : updatedNotes}</span>
         </Card.Description>
+    
     </Card.Content>
-      { editing && <Button onClick={handleDelete}>Delete Item</Button>}
+      {editing && <Button onClick={handleDelete}>Delete Item</Button>}
         <Button onClick={handleEditClick}>{editing ? 'Save' : 'Edit Item'}</Button>
   </Card>
   </div>

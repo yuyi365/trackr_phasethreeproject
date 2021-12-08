@@ -5,13 +5,13 @@ const Search = ({handleSearch, search}) => {
   }
  
   return (
-    <div className="searchbar">
-      <label htmlFor="search">Search Items</label>
+    <div className="search-box">
       <input
         type="text"
+        className="search-input"
         id="search"
         value={search}
-        placeholder="Type a item to search..."
+        placeholder="Search for an item..."
         onChange={handleSearchType}
       />
     </div>

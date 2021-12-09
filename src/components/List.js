@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Button, Grid, GridColumn, Modal, Dropdown, Icon } from 'semantic-ui-react';
+import { Button, Grid, GridColumn, Modal, Dropdown, Icon, Radio, Label } from 'semantic-ui-react';
 import CreateItem from './CreateItem';
 import ItemContainer from './ItemContainer';
 import Search from './Search';
 import Header from './Header';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import TableView from './TableView';
 
 const List = ({listId, setListId}) => {
     const params = useParams();
@@ -16,6 +17,7 @@ const List = ({listId, setListId}) => {
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [deleteList, setDeleteList] = useState(false);
+    const [tableView, setTableView] = useState(false)
 
     const handleDelete = () => {
         fetch(`http://localhost:9292/lists/${listId}`, {
@@ -67,16 +69,27 @@ const List = ({listId, setListId}) => {
 
     return (
     <div>
+        
         <div className="list-page">
             <Header/>
         </div>
-
+        
         <Grid container columns={2} stackable>
-            <GridColumn stackable>
-                <h2 className="list-page-add">{listName}</h2>
+            <GridColumn style={{display:"flex"}}>
+                <div className="items-list-div">
+                    <h2 className="list-page-add" onClick={()=> setSelectedCategory('All')}>{listName}</h2>
+                    <Icon className="delete-list" size="large" name="delete" onClick={() => setDeleteList(true)} style={{opacity: "0.5"}}/>
+                </div>
             </GridColumn>
-            <GridColumn stackable>
-                <Icon className="delete-list" style={{marginLeft: "-255%", marginTop: "2.5%", opacity: "0.5"}} size="large" name="delete" onClick={() => setDeleteList(true)}/>
+            <GridColumn textAlign="right" verticalAlign="middle">
+                <div style={{marginRight:"15%"}}>
+                
+                    <Icon name="block layout" style={{paddingRight:"6%", paddingLeft:"50%", opacity:"0.75", color:"#0a2342"}}/>
+                    
+                    <Radio toggle onChange={()=> { setTableView(tableView => !tableView)}} style={{opacity:"0.75", color:"#0a2342"}}/>
+                    
+                    <Icon name="list ul" style={{paddingLeft:"3%", opacity:"0.75", color:"#0a2342"}}/>
+                </div>
             </GridColumn>
         </Grid>
 
@@ -123,7 +136,7 @@ const List = ({listId, setListId}) => {
             </GridColumn>
         </Grid>
 
-            <ItemContainer items={items} search={search} selectedCategory={selectedCategory} categories={categories} setItems={setItems}/>
+            {tableView ? <TableView items={items} search={search} selectedCategory={selectedCategory} categories={categories} setItems={setItems}/> :<ItemContainer items={items} search={search} selectedCategory={selectedCategory} categories={categories} setItems={setItems}/>}
 
     <Modal
       basic
@@ -131,7 +144,6 @@ const List = ({listId, setListId}) => {
       onOpen={() => setDeleteList(true)}
       open={deleteList}
       size='small'
-      trigger={<Button>Basic Modal</Button>}
     >
       <Modal.Content>
        <h3 style={{marginLeft:"25%"}}>Are you sure you'd like to delete this list?</h3>

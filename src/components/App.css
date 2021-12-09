@@ -4,6 +4,10 @@ body {
   background-color: #3aaed8 !important;
 }
 
+/* * {
+  border: 1px solid red;
+} */
+
 .item-cards-list {
   padding-top: 2%;
   padding-bottom: 7%;
@@ -39,19 +43,11 @@ body {
   text-align: center;
 }
 
-.testDiv {
-  margin: 5rem;
-}
-
 .ui.grid.list-page {
   justify-content: center;
   text-align: center;
   align-items: center;
   margin-left: 50%;
-}
-
-.list-page-add {
-  margin-left: 10%;
 }
 
 .ui.grid.list-page-search {
@@ -67,7 +63,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 80%;
-  overflow: hidden;
+  overflow: auto;
   outline: 2px solid #efbd6c;
   background-color: white;
   margin-left: 15%;
@@ -75,9 +71,9 @@ body {
 
 .search-input {
   border: none;
-  flex: 1;
   outline: none;
   height: 100%;
+  max-width: 80%;
   padding: 0 20px;
   font-size: 16px;
   color: #0a2342;
@@ -124,12 +120,39 @@ body {
 h2 {
   color: #0a2342;
   font-size: 2rem !important;
-  /* text-decoration: #efbd6c underline; */
-  border-bottom-style: solid;
+  text-decoration: #efbd6c 3px underline;
+  /* border-bottom-style: solid;
   border-bottom-width: 3.5px;
-  border-color: #efbd6c;
+  border-color: #efbd6c; */
+  text-underline-position: under;
   width: fit-content;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.items-list-div {
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.delete-list:hover {
+  color: #efbd6c;
+  cursor: pointer;
+}
+
+.list-page-add {
+  height: 35%;
+  margin-top: 40%;
+  margin-right: 5%;
+}
+
+.list-page-add:hover {
+  cursor: pointer;
+}
+
+.table-cell {
+  background: white;
+  color: #0a2342;
 }

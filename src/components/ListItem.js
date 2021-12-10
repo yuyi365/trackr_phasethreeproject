@@ -5,9 +5,7 @@ const ListItem = ({name, id, setListId}) => {
 
     const style = {
         color:"#0A2342",
-        position: "absolute",
-        top: "40%",
-        right: "25%"
+        marginTop: "30%"
     }
 
     return (

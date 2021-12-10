@@ -1,26 +1,39 @@
-# Trackr
+# Trackr - Inventory Tracker Tool
 
-Trackr is a web page written using Reactjs and css to style the JSX elements. Trackr allows users to create lists of items and manage the inventory of items. The backend of Trackr is written using Ruby, Sinatra, and Postgresql.
+Trackr is intended to be used by individuals and/or businesses to create inventories and track their items in real-time.
 
-Trackr is intended to be used by individuals or businesses that have a desire to keep track of their inventory of items.
+## User Features
 
-We are working on a helper React Native app that allows users to scan an item and add it to one of their lists. The current iteration of this helper app can be found [https://snack.expo.dev/@buselax/joyous-croissant](here)
+- Create lists of items
+- Update the item name, quantity, minimum quantity, and notes
 
-## Usage
+## Technologies & API(s)
 
-This web page is deployed on Netlify at [https://trackr-tool.netlify.app](https://trackr-tool.netlify.app)
+# Technical Features:
 
-## Notices
+- React (frontend)
+- Ruby (backend)
 
-Trackr uses the following resources
+# Libraries
 
-- Semantic UI
-- Heroku for backend deployment
-- React
-- Sinatra
-- Postgresql
+- Semantic UI (frontend)
+- Postgresql / Sqlite3 (database)
+- Sinatra (backend)
+
+# Deployment Tools
+
+- Netify (frontend): the website is deployed on Netlify at [https://trackr-tool.netlify.app](https://trackr-tool.netlify.app)
+
+- Heroku (backend) : the backend is deployed on Heroku at [https://fathomless-sands-79733.herokuapp.com/] (https://fathomless-sands-79733.herokuapp.com/)
+
+## Future Developments
+
+1. A helper React Native app that allows users to scan an item and add it to one of their lists. The current iteration of this helper app can be found [https://snack.expo.dev/@buselax/joyous-croissant](here)
+
+2. Authentication features to host multiple users
+
+3. Pre-set notifications to alert users of quantities and trigger actions based on quantity
 
 ## Contributors
 
-- Andrew Busel
-- Yuyi Li
+Andrew Busel & Yuyi Li

@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Trackr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Find Lunch is a web page written using javascript, html, and css that accesses Yelp's Data using the Yelp Fusion API and renders elements based off of the users location and a variety of optional filters in order to find restaurants surrounding the user.
 
-## Available Scripts
+Find Lunch is intented to be used within a city and allows users to filter by distance in blocks. For the purposes of Find Lunch a "block" is defined using the distance of a New York city block which is 264 feet, however the length of blocks can vary from city to city.
 
-In the project directory, you can run:
+Trackr is a web page written using Reactjs and css to style the JSX elements, that allows users to create lists of items and manage the inventory of items. The backend of Trackr is written using Ruby, Sinatra, and Postgresql.
 
-### `npm start`
+Trackr is intended to be used by individuals or businesses that have a desire to keep track of their inventory of items.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We are working on a helper React Native app that allows users to scan an item and add it to one of their lists. The current iteration of this helper app can be found [https://snack.expo.dev/@buselax/joyous-croissant](here)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Usage
 
-### `npm test`
+This web page is deployed on Netlify at [https://trackr-tool.netlify.app](https://trackr-tool.netlify.app)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Notices
 
-### `npm run build`
+Trackr uses the following resources
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Semantic UI
+- Heroku for backend deployment
+- React
+- Sinatra
+- Postgresql
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Andrew Busel
+- Yuyi Li

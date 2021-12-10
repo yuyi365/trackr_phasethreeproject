@@ -4,8 +4,10 @@ Trackr is intended to be used by individuals and/or businesses to create invento
 
 ## User Features
 
-- Create lists of items
+- Create and delete lists with dynamic list-adding functionalities
+- Filter and search through lists
 - Update the item name, quantity, minimum quantity, and notes
+- Dynamic display option toggle between table and list views
 
 ## Technologies & API(s)
 

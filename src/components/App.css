@@ -4,9 +4,9 @@ body {
   background-color: #3aaed8 !important;
 }
 
-/* * {
+* {
   border: 1px solid red;
-} */
+}
 
 .item-cards-list {
   padding-top: 2%;
@@ -94,11 +94,11 @@ body {
 }
 
 .ui.card.list-card-item {
-  width: 150px;
-  height: 150px;
+  width: 70%;
+  height: 50%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   outline: 2px solid #efbd6c;
 }
 

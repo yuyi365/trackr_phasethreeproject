@@ -9,18 +9,18 @@ Trackr is intended to be used by individuals and/or businesses to create invento
 
 ## Technologies & API(s)
 
-# Technical Features:
+# Languages:
 
 - React (frontend)
 - Ruby (backend)
 
-# Libraries
+# Libraries & Server/Database Tools Used
 
 - Semantic UI (frontend)
 - Postgresql / Sqlite3 (database)
 - Sinatra (backend)
 
-# Deployment Tools
+# Deployment
 
 - Netify (frontend): the website is deployed on Netlify at [https://trackr-tool.netlify.app](https://trackr-tool.netlify.app)
 

@@ -4,24 +4,18 @@ import NewList from './NewList';
 import Header from './Header';
 import { CardGroup, Grid } from 'semantic-ui-react';
 
-const Home = ({setListId, userId}) => {
-    const [lists, setLists] = useState([]);
-    const [open, setOpen] = useState(false)
+const Home = ({setListId, userId, lists, setLists}) => {
 
-    useEffect(() => {
-        fetch(`https://fathomless-sands-79733.herokuapp.com/lists/user_id/${userId}`)
-        .then((res) => res.json())
-        .then((data) => setLists(data));
-      }, [])
-
+    const [open, setOpen] = useState(false);
+    
     return (
         <div className='testDiv'> 
 
         <Header />       
-        
         <div className="item-cards-list">
             <h2>Your Lists</h2>
         </div>
+        
        
         <CardGroup>
         <Grid container columns={3} stackable className="item-cards">

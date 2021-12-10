@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import TableView from './TableView';
 
-const List = ({listId, setListId}) => {
+const List = ({listId, setListId, lists, setLists }) => {
     const params = useParams();
     const [search, setSearch] = useState("");
     const [addItem, setAddItem] = useState(false);
@@ -22,7 +22,7 @@ const List = ({listId, setListId}) => {
     const handleDelete = () => {
         fetch(`https://fathomless-sands-79733.herokuapp.com/lists/${listId}`, {
             method: 'DELETE'
-        })
+        }).then(()=> setLists(lists => lists.filter(list => list.id != listId)))
     }
 
     let displayCategories = categories.map((category)=>{

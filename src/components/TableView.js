@@ -32,7 +32,7 @@ export default function TableView({items, search, selectedCategory, categories, 
         <Table.Cell className="table-cell">{categories.filter((category)=> category.id === item.category_id)[0].name}</Table.Cell>
         <Table.Cell className="table-cell">{item.quantity}</Table.Cell>
         <Table.Cell className="table-cell">{item.min_quantity}</Table.Cell>
-        <Table.Cell className="table-cell" style={{overflow: "scroll"}}>{item.notes}</Table.Cell>
+        <Table.Cell className="table-cell" style={{overflow: "auto"}}>{item.notes}</Table.Cell>
 
         </Table.Row>
     })}

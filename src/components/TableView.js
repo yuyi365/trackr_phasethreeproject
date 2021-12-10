@@ -13,8 +13,8 @@ export default function TableView({items, search, selectedCategory, categories, 
     
     return (
 
-    <Table celled textAlign="center" stackable selectable verticalAlign="middle"
-    style={{padding:"2% 3%", backgroundColor: "#3aaed8", color: "#0a2342"}} sortable>
+    <Table fixed celled textAlign="center" stackable selectable verticalAlign="middle"
+    style={{padding:"2% 3%", backgroundColor: "#3aaed8", color: "#0a2342", overflow:"scroll"}} sortable>
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell style={{backgroundColor: "#efbd6c", color: "#0a2342"}}>Item Name</Table.HeaderCell>
@@ -32,7 +32,7 @@ export default function TableView({items, search, selectedCategory, categories, 
         <Table.Cell className="table-cell">{categories.filter((category)=> category.id === item.category_id)[0].name}</Table.Cell>
         <Table.Cell className="table-cell">{item.quantity}</Table.Cell>
         <Table.Cell className="table-cell">{item.min_quantity}</Table.Cell>
-        <Table.Cell className="table-cell">{item.notes}</Table.Cell>
+        <Table.Cell className="table-cell" style={{overflow: "scroll"}}>{item.notes}</Table.Cell>
 
         </Table.Row>
     })}

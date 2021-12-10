@@ -1,6 +1,6 @@
 # Trackr
 
-Trackr is a web page written using Reactjs and css to style the JSX elements, that allows users to create lists of items and manage the inventory of items. The backend of Trackr is written using Ruby, Sinatra, and Postgresql.
+Trackr is a web page written using Reactjs and css to style the JSX elements. Trackr allows users to create lists of items and manage the inventory of items. The backend of Trackr is written using Ruby, Sinatra, and Postgresql.
 
 Trackr is intended to be used by individuals or businesses that have a desire to keep track of their inventory of items.
 

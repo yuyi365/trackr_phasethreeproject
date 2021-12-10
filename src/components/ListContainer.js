@@ -11,9 +11,10 @@ const ListContainer = ({setListId, lists, setOpen}) => {
                 return <ListItem name={list.name} id ={list.id} setListId={setListId} key={list.id}/>
             })}
 
-        <Card raised stackable className="list-card-item" onClick={()=> setOpen(true)}>
-            <Card.Content style={{marginTop: "20%", color:"#0A2342"}}>
-                <Card.Header style={{color:"#0A2342"}}>+ Add New List</Card.Header>
+        <Card raised stackable className="list-card-item" onClick={()=> setOpen(true)} style={{display: "flex"}}>
+            <Card.Content style={{color:"#0A2342"}}>
+                <Card.Header style={{color:"#0A2342", position: "absolute", top: "40%", right: "27%"}}>
+                    + Add New List</Card.Header>
             </Card.Content>
         </Card>
     </Card.Group>

@@ -13,7 +13,7 @@ const ListContainer = ({setListId, lists, setOpen}) => {
 
         <Card raised stackable className="list-card-item" onClick={()=> setOpen(true)} style={{display: "flex"}}>
             <Card.Content style={{color:"#0A2342"}}>
-                <Card.Header style={{color:"#0A2342", marginTop: "30%"}}>
+                <Card.Header style={{color:"#0A2342", marginTop: "60%"}}>
                     + Add New List</Card.Header>
             </Card.Content>
         </Card>

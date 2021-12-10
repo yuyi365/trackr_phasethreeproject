@@ -12,7 +12,7 @@ const Item = ({name, quantity, minQuantity, notes, image, id, items, setItems, c
     const handleEditClick = () => {
         setEditing(editing => !editing)
         if (editing){
-            fetch(`http://localhost:9292/items/${id}`, {
+            fetch(`https://fathomless-sands-79733.herokuapp.com/items/${id}`, {
                 method: 'PATCH',
                 headers: {
                     "Content-Type" : "application/json"
@@ -27,7 +27,7 @@ const Item = ({name, quantity, minQuantity, notes, image, id, items, setItems, c
         }
     }
 const handleDelete = () => {
-    fetch(`http://localhost:9292/items/${id}`,{
+    fetch(`https://fathomless-sands-79733.herokuapp.com/items/${id}`,{
         method: 'DELETE'
     }).then(()=> setItems(items.filter(item => item.id !== id)) )
     

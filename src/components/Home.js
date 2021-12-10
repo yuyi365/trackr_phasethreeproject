@@ -9,7 +9,7 @@ const Home = ({setListId, userId}) => {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:9292/lists/user_id/${userId}`)
+        fetch(`https://fathomless-sands-79733.herokuapp.com/lists/user_id/${userId}`)
         .then((res) => res.json())
         .then((data) => setLists(data));
       }, [])

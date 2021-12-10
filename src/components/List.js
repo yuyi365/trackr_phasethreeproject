@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Grid, GridColumn, Modal, Dropdown, Icon, Radio, Label } from 'semantic-ui-react';
+import { Button, Grid, GridColumn, Modal, Dropdown, Icon, Radio } from 'semantic-ui-react';
 import CreateItem from './CreateItem';
 import ItemContainer from './ItemContainer';
 import Search from './Search';
@@ -20,7 +20,7 @@ const List = ({listId, setListId}) => {
     const [tableView, setTableView] = useState(false)
 
     const handleDelete = () => {
-        fetch(`http://localhost:9292/lists/${listId}`, {
+        fetch(`https://fathomless-sands-79733.herokuapp.com/lists/${listId}`, {
             method: 'DELETE'
         })
     }
@@ -45,17 +45,17 @@ const List = ({listId, setListId}) => {
     }
 
     useEffect(() => {
-        listId && fetch(`http://localhost:9292/lists/${listId}/items`)
+        listId && fetch(`https://fathomless-sands-79733.herokuapp.com/lists/${listId}/items`)
         .then((res) => res.json())
         .then((data) => setItems(data));
-         listId && fetch(`http://localhost:9292/lists/${listId}`)
+         listId && fetch(`https://fathomless-sands-79733.herokuapp.com/lists/${listId}`)
         .then((res) => res.json())
         .then((data) => setListName(data.name));
         
       }, [listId])
 
       useEffect(()=>{
-        listId && fetch(`http://localhost:9292/lists/${listId}/categories`)
+        listId && fetch(`https://fathomless-sands-79733.herokuapp.com/lists/${listId}/categories`)
         .then((res) => res.json())
         .then(data => setCategories(data))
       }, [listId, items])

@@ -26,7 +26,7 @@ const CreateItem = ({setAddItem, categories, items, setItems, listId, onList, se
             image: image
         }
         
-        fetch('http://localhost:9292/items', {
+        fetch('https://fathomless-sands-79733.herokuapp.com/items', {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",

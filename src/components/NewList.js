@@ -20,7 +20,7 @@ const NewList = ({userId, lists, setLists, open, setOpen}) => {
 
     const handleNext = () => {
         if (name){setCreating('item')
-        fetch('http://localhost:9292/lists', {
+        fetch('https://fathomless-sands-79733.herokuapp.com/lists', {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",

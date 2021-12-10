@@ -2,15 +2,6 @@ import { Icon, Label, Menu, Table } from 'semantic-ui-react'
 
 export default function TableView({items, search, selectedCategory, categories, setItems}) {
     
-    // const mapItems = items.map((item) => {
-    //     return <Table.Row>
-    //     <Table.Cell>{item.name}</Table.Cell>
-    //     <Table.Cell>{item.quantity}</Table.Cell>
-    //     <Table.Cell>{item.min_quantity}</Table.Cell>
-    //     <Table.Cell>{item.notes}</Table.Cell>
-    //     </Table.Row>
-    // }
-
     const selectedCategoryId = categories.filter(category => category.name === selectedCategory)[0] && categories.filter(category => category.name === selectedCategory)[0].id
 
     const filteredItems = selectedCategory === 'All' ? items.filter((item) => {
@@ -23,8 +14,7 @@ export default function TableView({items, search, selectedCategory, categories, 
     return (
 
     <Table celled textAlign="center" stackable selectable verticalAlign="middle"
-    style={{padding:"2% 3%", backgroundColor: "#3aaed8", color: "#0a2342"}}
-    >
+    style={{padding:"2% 3%", backgroundColor: "#3aaed8", color: "#0a2342"}} sortable>
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell style={{backgroundColor: "#efbd6c", color: "#0a2342"}}>Item Name</Table.HeaderCell>
@@ -38,7 +28,7 @@ export default function TableView({items, search, selectedCategory, categories, 
     <Table.Body>
       {filteredItems.map((item) => {
         return <Table.Row>
-        <Table.Cell className="table-cell">{item.name}</Table.Cell>
+        <Table.Cell className="table-cell" style={{fontWeight: "bold"}}>{item.name}</Table.Cell>
         <Table.Cell className="table-cell">{categories.filter((category)=> category.id === item.category_id)[0].name}</Table.Cell>
         <Table.Cell className="table-cell">{item.quantity}</Table.Cell>
         <Table.Cell className="table-cell">{item.min_quantity}</Table.Cell>
@@ -49,22 +39,5 @@ export default function TableView({items, search, selectedCategory, categories, 
     </Table.Body>
   </Table>
         
-        // <div>
-        //     <table>
-        //         <th>Item Name</th>
-        //         <th>Quantity</th>
-        //         <th>Minimum Quantity</th>
-        //         <th>Notes</th>
-               
-        //         {items.map((item) => {
-        //          return  <tr>
-        //          <td>{item.name}</td>
-        //          <td>{item.quantity}</td>
-        //          <td>{item.min_quantity}</td>
-        //          <td>{item.notes}</td>
-        //      </tr>
-        //         })}
-        //     </table>
-        // </div>
     )
 }

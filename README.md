@@ -24,13 +24,13 @@ Trackr is intended to be used by individuals and/or businesses to create invento
 
 # Deployment
 
-- Netify (frontend): the website is deployed on Netlify at [here](https://trackr-tool.netlify.app)
+- Netify (frontend): the website is deployed on Netlify [here](https://trackr-tool.netlify.app)
 
-- Heroku (backend) : the backend is deployed on Heroku at [here] (https://fathomless-sands-79733.herokuapp.com/)
+- Heroku (backend) : the backend is deployed on Heroku [here](https://fathomless-sands-79733.herokuapp.com/)
 
 ## Future Developments
 
-1. A helper React Native app that allows users to scan an item and add it to one of their lists. The current iteration of this helper app can be found [here] (https://snack.expo.dev/@buselax/joyous-croissant)
+1. A helper React Native app that allows users to scan an item and add it to one of their lists. The current iteration of this helper app can be found [here](https://snack.expo.dev/@buselax/joyous-croissant)
 
 2. Authentication features to host multiple users
 
